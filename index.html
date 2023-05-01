@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
-    <header>Day five - Task (by - Udhayasooriyan)</header>
+    <header>
+      Day five - Task (by - Udhayasooriyan)
+      <span
+        >Note : all code shown below already executed on the same page, kindly
+        check console.log</span
+      >
+    </header>
     <nav>
       <a href="#fun">Program using Function</a>
       <a href="#iife">Program using IIFE</a>
@@ -91,16 +97,19 @@
       <h3>5) Return all the palindromes in an array</h3>
       <code>
         <pre>
+          
+          let data=['nitin','malayalam','suriya','madam'];
+          let palindromesArray=[];
           function palindromes(data){
-            if(data==data.split('').reverse().join('')){
-                console.log(`${data} is palindromes`)
-            }else{
-                console.log(`${data} is not palindromes`)
+              for(i=0;i< data.length;i++){
+                  if(data[i]== data[i].split('').reverse().join('')){
+                      palindromesArray.push(data[i]);
+                  }
+              }
+              return palindromesArray;
             }
-          }
-          let data='nitin';
-          palindromes(data)//if forward & backward of
-          sentence is same result will be true.
+          palindromes(data)//if forward & backward of 
+          sentence is same, then it will be displayed.
         </pre>
       </code>
       <h3>6) Return median of two sorted arrays of the same size.</h3>
@@ -247,14 +256,16 @@
       <code>
         <pre>
           (function palindromes(data){
-            if(data==data.split('').reverse().join('')){
-                console.log(`${data} is palindromes`)
-            }else{
-                console.log(`${data} is not palindromes`)
+            let palindromesArray=[];
+            for(i=0;i< data.length;i++){
+                if(data[i]==data[i].split('').reverse().join('')){
+                    palindromesArray.push(data[i]);
+                }
             }
-          })('nitin')
-          palindromes(data)//if forward & backward of
-          sentence is same result will be true.
+            console.log(palindromesArray);
+            })(['nitin','malayalam','suriya','madam'])
+
+            //if forward & backward of sentence is same, then it will be displayed.
         </pre>
       </code>
       <h3>6) Return median of two sorted arrays of the same size.</h3>
@@ -398,54 +409,22 @@
       <h3>5) Return all the palindromes in an array</h3>
       <code>
         <pre>
-          let palindromes=(data)=>{
-            if(data==data.split('').reverse().join('')){
-                console.log(`${data} is palindromes`)
-            }else{
-                console.log(`${data} is not palindromes`)
+          let data1=['nitin','malayalam','suriya','madam'];
+          let palindromesArray1=[];
+          var palindromes=(data)=>{
+              for(i=0;i< data.length;i++){
+                  if(data[i]==data[i].split('').reverse().join('')){
+                      palindromesArray1.push(data[i]);
+                  }
+              }
+              return palindromesArray1;
             }
-          }
-          let data='nitin';
-          palindromes(data)//if forward & backward of
-           sentence is same result will be true.
-        </pre>
-      </code>
-      <h3>6) Return median of two sorted arrays of the same size.</h3>
-      <code>
-        <pre>
-          function median(a,b){
-            let concat=[...a,...b];
-            let result=[];
-            let length=concat.length;
-            if(length%2==0){
-                result.push(concat[length/2-1],concat[length/2])
-            }else{
-                result.push(concat[Math.floor(length/2)])
-            }
-            return result;
-          }
-          let a=[1,2,3,4];
-          let b=[5,6,7,8];
-          console.log(median(a,b))//if input total length
-           is even will return median as two dight, if odd return one dight 
+            console.log(palindromes(data1))//if forward & backward of sentence is same result will be true.
         </pre>
       </code>
     </div>
-    <script>
-      console.log("script working");
-      const req = new XMLHttpRequest();
-      req.open("GET", "https://restcountries.com/v3.1/all");
-      req.send();
-      req.addEventListener("load", request);
-      function request() {
-        let data = JSON.parse(this.responseText);
-        for (i in data) {
-          console.log(`Country flag : ${data[i].flag}`);
-          console.log(
-            `Country Name : ${data[i].name.common}, Region: ${data[i].region}, Sunregion: ${data[i].subregion}, Population: ${data[i].population}`
-          );
-        }
-      }
-    </script>
+    <script src="./JS/Function.js"></script>
+    <script src="./JS/IIFE.js"></script>
+    <script src="./JS/ArrowFunction.js"></script>
   </body>
 </html>
